@@ -1,0 +1,32 @@
+{
+    "info": {
+        "description": "Source code for libra project",
+        "requires": [
+            "swi-aptdeps-repo-src_1.0",
+            "swi-verify-aptdeps_latest"
+        ],
+        "depends": [
+            "swi-cloneutils_latest",
+            "libra_latest"
+        ]
+    },
+    "sync": [
+        {
+            "command": [
+                "@{DIR:swi-cloneutils_latest}/swi-clone",
+                "-s",
+                "libra",
+                "-m",
+                "tag:global.xml",
+                "-m",
+                "master:global.xml",
+                "-g",
+                "unknown"
+            ],
+            "verbose": true
+        }
+    ],
+    "env": {
+        "LIBRA_GERRIT_URL": "git@github.com:libra-net/manifest.git"
+    }
+}

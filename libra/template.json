@@ -1,0 +1,21 @@
+{
+    "info": {
+        "description": "Settings for libra project development workspace"
+    },
+    "settings": {
+        "source.mode": {
+            "key": "LIBRA_SRC",
+            "description": "Source mode for libra project",
+            "regex": "(tag|master)"
+        },
+        "source.dir": {
+            "key": "LIBRA_CLONE",
+            "description": "Directory where to clone libra project sources"
+        },
+        "source.project": {
+            "key": "LIBRA_GERRIT_GROUPS",
+            "description": "Cloned groups for libra projects",
+            "regex": "(releng)"
+        }
+    }
+}
