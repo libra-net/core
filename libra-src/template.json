@@ -19,14 +19,14 @@
                 "-m",
                 "tag:global.xml",
                 "-m",
-                "master:global.xml",
-                "-g",
-                "unknown"
+                "master:global.xml"
             ],
             "verbose": true
         }
     ],
     "env": {
-        "LIBRA_GERRIT_URL": "git@github.com:libra-net/manifest.git"
+        "LIBRA_GERRIT_URL": "git@github.com:libra-net/manifest.git",
+        "LIBRA_CLONE": "${LIBRA_CLONE:-${LEAF_WORKSPACE}}",
+        "GERRIT_USER": "Unknown"
     }
 }

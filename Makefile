@@ -36,9 +36,11 @@ $(INDEX): $(PACKAGES) Makefile
 
 $(MANIFESTS): $(CURDIR)/Makefile $(TEMPLATES)
 	mkdir -p $(CUROUTPUT)
+	export VERSION=$(VERSION) && \
 	leaf build manifest \
 		-o $(CUROUTPUT) \
 		--name $(CURNAME) \
 		--version $(VERSION) \
 		--date "$(DATE)" \
-		--append $(CURNAME)/template.json
+		--append $(CURNAME)/template.json \
+		--env

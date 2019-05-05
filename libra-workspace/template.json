@@ -1,0 +1,18 @@
+{
+    "info": {
+        "description": "Workspace setup for the Libra network project",
+        "master": true,
+        "depends": [
+            "libra-src_#{VERSION}"
+        ]
+    },
+    "sync": [
+        {
+            "command": [
+                "echo",
+                "\nWorkspace is now ready. Please use *leaf select xxx* to activate the profile of your choice.\n"
+            ],
+            "verbose": true
+        }
+    ]
+}
