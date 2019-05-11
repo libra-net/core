@@ -1,5 +1,7 @@
 # Main makefile to build leaf repository for libra project
+ifeq ($(LIBRA_DEBUG),)
 .SILENT:
+endif
 .PHONY: clean all
 
 # Some generic definitions

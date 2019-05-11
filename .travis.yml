@@ -1,0 +1,12 @@
+# Build definition for Travis CI
+
+# Things will be handled in Docker images, so use minimal support in Travis containers
+language: minimal
+services:
+  - docker
+
+# Install phase
+install: true
+
+# Build phase
+script: make ci
