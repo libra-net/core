@@ -20,6 +20,8 @@ all: init leaf-update
 # Init deploy dir with previous artifacts
 init:
 	git clone --depth 1 https://github.com/libra-net/libra-net.github.io.git $(DEPLOY)
+	env | grep TRAVIS
+	git branch
 
 # Contribute built leaf artifacts to archived tree
 leaf-update:
