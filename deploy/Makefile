@@ -5,7 +5,11 @@ endif
 .PHONY: clean all init
 
 # Current branch name
+ifneq ($(TRAVIS_BRANCH),)
+CURRENT_BRANCH_NAME := $(TRAVIS_BRANCH)
+else
 CURRENT_BRANCH_NAME := $(shell git branch | grep \* | cut -d ' ' -f2)
+endif
 
 # Deploy directories
 DEPLOY := $(CURDIR)/deploy

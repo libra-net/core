@@ -26,6 +26,9 @@ ci:
 	docker pull $(CI_IMAGE)
 	rm -Rf $(TMP_BUILD)
 	cp -aL $(CURDIR) $(TMP_BUILD)
-	docker run --rm --entrypoint /bin/bash -v $(TMP_BUILD):/build -e LIBRA_DEBUG \
+	docker run --rm --entrypoint /bin/bash -v $(TMP_BUILD):/build \
+		-e LIBRA_DEBUG \
+		-e TRAVIS_BRANCH \
+		-e TRAVIS_TAG \
 		$(CI_IMAGE) -c \
 		"sudo /etc/init.sh; sudo chown -R user.user /build; cd /build; sudo apt install -y make git-core; make clean all"
