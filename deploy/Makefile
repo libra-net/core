@@ -12,6 +12,9 @@ CURRENT_BRANCH_NAME := $(shell git branch | grep \* | cut -d ' ' -f2)
 endif
 
 # Deploy directories
+# -- TODO: clean branches that don't exist anymore on remote
+# -- TODO: manage tags
+# -- TODO: build common index with all merged tags
 DEPLOY := $(CURDIR)/deploy
 DEPLOY_BRANCH := $(DEPLOY)/leaf/branches/$(CURRENT_BRANCH_NAME)
 
