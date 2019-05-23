@@ -10,3 +10,13 @@ install: true
 
 # Build phase
 script: make ci
+
+# Deployment
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  keep_history: true
+  local_dir: deploy/deploy
+  target_branch: deploy-test
+  verbose: true

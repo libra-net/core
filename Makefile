@@ -4,7 +4,7 @@ ifeq ($(LIBRA_DEBUG),)
 endif
 
 # Components list
-COMPONENTS := leaf
+COMPONENTS := leaf deploy
 
 # Global usual targets
 .PHONY: clean all ci $(COMPONENTS)
@@ -28,4 +28,4 @@ ci:
 	cp -aL $(CURDIR) $(TMP_BUILD)
 	docker run --rm --entrypoint /bin/bash -v $(TMP_BUILD):/build -e LIBRA_DEBUG \
 		$(CI_IMAGE) -c \
-		"sudo /etc/init.sh; sudo chown -R user.user /build; cd /build; sudo apt install -y make git-core; make all"
+		"sudo /etc/init.sh; sudo chown -R user.user /build; cd /build; sudo apt install -y make git-core; make clean all"
